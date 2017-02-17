@@ -19,6 +19,7 @@ package de.app.tradestory;
 import java.io.File;
 import java.io.IOException;
 
+import jxl.WorkbookSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -55,7 +56,9 @@ public class SearchApplication implements CommandLineRunner {
 		Workbook workbook = null;
 		try {
 
-			workbook = Workbook.getWorkbook(new File("src/main/resources/content1.xls"));
+			WorkbookSettings ws = new WorkbookSettings();
+			ws.setEncoding("Cp1252");
+			workbook = Workbook.getWorkbook(new File("src/main/resources/content1.xls"), ws);
 
 			Sheet sheet = workbook.getSheet(0);
 
