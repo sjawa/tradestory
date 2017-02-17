@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 @Repository
-interface ContentRepository {
+public interface ContentRepository {
 
 	void deleteAll();
 

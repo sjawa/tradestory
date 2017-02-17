@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.app.tradestory.elasticsearch;
+package de.app.tradestory;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,6 +24,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import de.app.tradestory.elasticsearch.Content;
+import de.app.tradestory.elasticsearch.ContentRepository;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
