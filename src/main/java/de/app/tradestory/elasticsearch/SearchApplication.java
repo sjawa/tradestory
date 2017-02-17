@@ -100,7 +100,7 @@ public class SearchApplication implements CommandLineRunner {
 	}
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SearchApplication.class, "--debug").close();
+		SpringApplication.run(SearchApplication.class, "--debug");
 	}
 
 }
