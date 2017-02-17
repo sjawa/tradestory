@@ -84,3 +84,4 @@ target/
 /src/main/resources/doc/bootstrap-3.3.7/
 /src/main/resources/application-dev.properties
 /logs/partner.log
+/data/
