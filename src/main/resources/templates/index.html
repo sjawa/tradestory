@@ -40,31 +40,40 @@
 			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
 				<ul class="event-list">
 					<li th:each="content : ${results}">
-						<div class="info">
+            <time>
+              <img src="boy-512.png" class="avatar img-responsive"/>
+            </time>
+            <div class="info" style="padding: 10px">
 							<h2 class="title" th:text="${content.teaser}"></h2>
-							<p class="desc" th:text="${content.teaser}"></p>
-							<div class="social" align="right">
-								<a class="btn btn-primary" href="#primary" data-toggle="modal"><h6>
-										<i class="glyphicon glyphicon-search"></i> Leseprobe
-									</h6></a>
+							<div>
+                <p style="display: inline; float: left; width: 80%" class="desc" th:text="${content.shortText}"></p>
+                <div align="right" style="display: inline; float: right; padding: 10px">
+                  <a class="btn btn-primary" href="#primary" data-toggle="modal"><h6>
+                    <i class="glyphicon glyphicon-search"></i> Leseprobe
+                  </h6></a>
+                </div>
 								<!-- Modal -->
 								<div class="modal fade" id="primary" tabindex="-1" role="dialog"
 									aria-labelledby="myModalLabel" aria-hidden="true">
 									<div class="modal-dialog">
 										<div class="modal-content">
 											<div class="modal-header modal-header-primary">
-												<button type="button" class="close" data-dismiss="modal"
+                        <button type="button" class="close" data-dismiss="modal"
 													aria-hidden="true">×</button>
-												<h3>
-													<i class="glyphicon glyphicon-book"></i> Leseprobe
-												</h3>
+                          <h3>
+                            <span th:text="${content.teaser}"></span>
+                          </h3>
 											</div>
 											<div class="modal-body" align="left">
-												<pre th:text="${content.text}"></pre>
+                        <img src="boy-512.png" class="avatar img-responsive"/>
+                        <span class="header-username">Chuck Norris</span>
+                        <br /><br />
+                        <p th:text="${content.text}"></p>
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-default pull-left"
 													data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info">Autor kontaktieren</button>
 											</div>
 										</div>
 										<!-- /.modal-content -->

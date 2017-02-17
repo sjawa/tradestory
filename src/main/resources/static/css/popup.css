@@ -76,4 +76,19 @@
      border-top-right-radius: 5px;
 }
 
+.modal-body p {
+    white-space:pre-wrap;
+}
+
+.modal-dialog {
+    width: 60%;
+}
+
+.navbar-inverse {
+  background-color: #a2a2a2;
+}
+
+.navbar-brand {
+  height: 70px;
+}
 

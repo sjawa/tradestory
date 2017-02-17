@@ -16,6 +16,7 @@
 
 package de.app.tradestory.elasticsearch;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -35,6 +36,10 @@ public class Content {
 	public Content(String teaser, String text) {
 		this.text = text;
 		this.teaser = teaser;
+	}
+
+	public String getShortText(){
+		return StringUtils.abbreviate(text, 200);
 	}
 
 	public String getId() {

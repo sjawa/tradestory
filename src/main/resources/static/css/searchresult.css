@@ -22,13 +22,9 @@
 		display: inline-block;
 		width: 100%;
 		color: rgb(255, 255, 255);
-		background-color: rgb(197, 44, 102);
-		padding: 5px;
+		padding: 20px;
 		text-align: center;
 		text-transform: uppercase;
-	}
-	.event-list > li:nth-child(even) > time {
-		background-color: rgb(165, 82, 167);
 	}
 	.event-list > li > time > span {
 		display: none;
@@ -147,22 +143,15 @@
 			background-color: rgb(245, 245, 245);
 			overflow: hidden;
 		}
-		.event-list > li > time,
-		.event-list > li > img {
-			width: 120px;
-			height: 120px;
-			padding: 0px;
-			margin: 0px;
-		}
 		.event-list > li > .info {
 			position: relative;
 			height: 120px;
 			text-align: left;
-			padding-right: 40px;
+			padding-right: 20px;
 		}
 		.event-list > li > .info > .title,
 		.event-list > li > .info > .desc {
-			padding: 0px 10px;
+			padding: 0px 0px;
 		}
 		.event-list > li > .info > ul {
 			position: absolute;

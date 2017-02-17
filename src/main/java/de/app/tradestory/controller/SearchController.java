@@ -38,7 +38,7 @@ public class SearchController {
     	
     	List<Content> results = new ArrayList<Content>();
 		for (Content content : repository.find(form.getQuery())) {
-			//content.setText(content.getText().replaceAll("(\r\n|\n)", "<br/>"));
+			//content.setText(content.getText().replaceAll("(\r\n|\n)", "<br /><br />"));
 			results.add(content);
 		}
 		
