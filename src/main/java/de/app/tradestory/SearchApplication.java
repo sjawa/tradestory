@@ -71,6 +71,7 @@ public class SearchApplication implements CommandLineRunner {
 				System.out.println("saving content");
 				this.repository.save(new Content(title, text));
 			}
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (BiffException e) {

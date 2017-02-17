@@ -13,15 +13,16 @@
 <body>
 	<div th:include="fragments/nav :: navigation"></div>
 	<div style="padding: 50px">
-  <form action="#" th:action="@{/search}" th:object="${searchForm}" method="POST">
-		<!--form action="/search" method="POST"-->
+		<form action="#" th:action="@{/search}" th:object="${searchForm}"
+			method="POST">
+			<!--form action="/search" method="POST"-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 col-sm-offset-3">
 						<div id="imaginary_container">
 							<div class="input-group stylish-input-group">
-								<input type="text" th:field="*{query}" class="form-control" placeholder="Search" />
-								<span class="input-group-addon">
+								<input type="text" th:field="*{query}" class="form-control"
+									placeholder="Search" /> <span class="input-group-addon">
 									<button type="submit">
 										<span class="glyphicon glyphicon-search"></span>
 									</button>
@@ -34,36 +35,60 @@
 		</form>
 	</div>
 
-  <div class="container">
-    <div class="row">
-      <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
-        <ul class="event-list">
-          <li th:each="content : ${results}">
-            <div class="info">
-              <h2 class="title" th:text="${content.teaser}"></h2>
-              <p class="desc" th:text="${content.teaser}"></p>
-            </div>
-            <div class="social">
-              <ul>
-                <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-                <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-                <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
-              </ul>
-            </div>
-            <!--time datetime="2014-07-20">
-              <span class="day">4</span>
-              <span class="month">Jul</span>
-              <span class="year">2014</span>
-              <span class="time">ALL DAY</span>
-            </time>
-            <img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
-            -->
+	<div class="container">
+		<div class="row">
+			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+				<ul class="event-list">
+					<li th:each="content : ${results}">
+						<div class="info">
+							<h2 class="title" th:text="${content.teaser}"></h2>
+							<p class="desc" th:text="${content.teaser}"></p>
+							<div class="social" align="right">
+								<a class="btn btn-primary" href="#primary" data-toggle="modal"><h6>
+										<i class="glyphicon glyphicon-search"></i> Leseprobe
+									</h6></a>
+								<!-- Modal -->
+								<div class="modal fade" id="primary" tabindex="-1" role="dialog"
+									aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header modal-header-primary">
+												<button type="button" class="close" data-dismiss="modal"
+													aria-hidden="true">×</button>
+												<h3>
+													<i class="glyphicon glyphicon-book"></i> Leseprobe
+												</h3>
+											</div>
+											<div class="modal-body" align="left">
+												<pre th:text="${content.text}"></pre>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default pull-left"
+													data-dismiss="modal">Close</button>
+											</div>
+										</div>
+										<!-- /.modal-content -->
+									</div>
+									<!-- /.modal-dialog -->
+								</div>
+								<!-- /.modal -->
+								<!-- Modal -->
 
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+							</div>
+
+							<div class="space"></div>
+						</div>
+
+
+
+
+
+
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
 
 </body>

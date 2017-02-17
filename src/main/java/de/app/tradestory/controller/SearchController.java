@@ -37,9 +37,8 @@ public class SearchController {
 		Map model = new HashMap<String, Object>();
     	
     	List<Content> results = new ArrayList<Content>();
-     	int found = 0;
 		for (Content content : repository.find(form.getQuery())) {
-			System.out.println(content);
+			//content.setText(content.getText().replaceAll("(\r\n|\n)", "<br/>"));
 			results.add(content);
 		}
 		

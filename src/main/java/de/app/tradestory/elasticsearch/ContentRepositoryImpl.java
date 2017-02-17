@@ -6,6 +6,7 @@ import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 import java.util.List;
 
 import org.elasticsearch.index.query.QueryStringQueryBuilder;
+import org.elasticsearch.index.query.QueryStringQueryBuilder.Operator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.query.IndexQuery;
@@ -55,6 +56,7 @@ class ContentRepositoryImpl implements ContentRepository {
     public List<Content> find(String query) {
     	
     	QueryStringQueryBuilder builder = queryStringQuery(query);
+    	builder.defaultOperator(Operator.AND);
     	builder.defaultField("text");
     	
     	SearchQuery searchQuery = new NativeSearchQueryBuilder()
