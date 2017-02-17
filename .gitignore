@@ -85,3 +85,4 @@ target/
 /src/main/resources/application-dev.properties
 /logs/partner.log
 /data/
+/partner.log

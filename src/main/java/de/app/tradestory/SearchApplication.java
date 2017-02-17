@@ -42,14 +42,6 @@ public class SearchApplication implements CommandLineRunner {
 		importContent();
 		//fetchAllContent();
 		
-		int found = 0;
-		for (Content content : repository.find("Flüchtlinge OR Frauen")) {
-			found++;
-			System.out.println(content);
-		}
-		
-		
-		System.out.println("found " + found);
 	}
 
 	private void importContent() {
