@@ -1,7 +1,7 @@
-package de.app.partner.controller;
+package de.app.tradestory.controller;
 
-import de.app.partner.model.Category;
-import de.app.partner.repository.CategoryRepository;
+import de.app.tradestory.model.Category;
+import de.app.tradestory.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;

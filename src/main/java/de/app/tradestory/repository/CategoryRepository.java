@@ -1,6 +1,6 @@
-package de.app.partner.repository;
+package de.app.tradestory.repository;
 
-import de.app.partner.model.Category;
+import de.app.tradestory.model.Category;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

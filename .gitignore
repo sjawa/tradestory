@@ -76,7 +76,7 @@ local.properties
 .recommenders/
 
 application-dev.properties
-src/main/java/de/app/partner/model/
+src/main/java/de/app/tradestory/model/
 src/main/resources/static/error/
 src/test/
 tomcat/

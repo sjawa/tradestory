@@ -1,4 +1,4 @@
-package de.app.partner.controller;
+package de.app.tradestory.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,13 +11,13 @@ public class PartnerController {
     @GetMapping
     public String show() {
 
-        return "partner/show";
+        return "tradestory/show";
     }
 
     @RequestMapping("/new")
     @GetMapping
     public String newPartner(){
-        return "partner/new";
+        return "tradestory/new";
     }
 
 }
