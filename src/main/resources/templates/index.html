@@ -33,5 +33,22 @@
 			</div>
 		</form>
 	</div>
+
+  <div>
+    <table>
+      <tbody>
+      <tr th:each="content : ${results}">
+        <td th:text="${content.teaser}"></td>
+      </tr>
+
+      <!--partial th:insert="/journalists/search_result_table_row.html"
+               th:remove="tag"
+               th:with="journalist=${journalist}"/-->
+      </tbody>
+    </table>
+
+  </div>
+
+
 </body>
 </html>
