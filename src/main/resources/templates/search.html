@@ -40,7 +40,7 @@
 			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
 				<ul class="event-list">
 					<li th:each="content : ${results}"><time>
-							<img src="boy-512.png" class="avatar img-responsive" />
+							<img th:src="'author-' + ${content.author} + '.jpg'" class="avatar img-responsive" />
 						</time>
 						<div class="info" style="padding: 10px">
 							<h2 class="title" th:text="${content.teaser}"></h2>
@@ -66,7 +66,7 @@
 												</h3>
 											</div>
 											<div class="modal-body" align="left">
-												<img src="boy-${content.random}.png" class="avatar img-responsive" /> <span
+												<img th:src="'author-' + ${content.author} + '.jpg'" class="avatar img-responsive" /> <span
 													class="header-username">Chuck Norris</span> <br />
 												<br />
 												<p th:text="${content.text}"></p>
