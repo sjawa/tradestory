@@ -24,11 +24,17 @@ public class SearchController {
 	@Autowired
 	private ContentRepository repository;
 
-    @GetMapping
+	@GetMapping
+	public String index(){
+		return "index";
+	}
+
+
+    /*@GetMapping("/search")
     public String searchForm(Model model){
     	model.addAttribute("searchForm", new SearchForm());
     	return "index";
-	}
+	}*/
 
 
     @PostMapping("/search")
@@ -44,6 +50,6 @@ public class SearchController {
 		
 		model.put("results", results);
 		
-		return new ModelAndView("index", model);
+		return new ModelAndView("search", model);
     }
 }
