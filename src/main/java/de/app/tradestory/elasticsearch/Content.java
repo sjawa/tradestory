@@ -23,8 +23,11 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @Document(indexName = "content", type = "content", shards = 1, replicas = 0, refreshInterval = "-1")
 public class Content {
 
+
 	@Id
 	private String id;
+
+	private String authorName;
 
 	private String text;
 
@@ -35,10 +38,11 @@ public class Content {
 	public Content() {
 	}
 
-	public Content(String teaser, String text, String author) {
+	public Content(String teaser, String text, String author, String authorName) {
 		this.text = text;
 		this.teaser = teaser;
 		this.author = author;
+		this.authorName = authorName;
 	}
 
 	public String getShortText(){
@@ -75,6 +79,14 @@ public class Content {
 	
 	public String getAuthor() {
 		return author;
+	}
+
+	public String getAuthorName() {
+		return authorName;
+	}
+
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
 	}
 
 	@Override

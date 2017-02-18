@@ -67,7 +67,7 @@
 											</div>
 											<div class="modal-body" align="left">
 												<img th:src="'author-' + ${content.author} + '.jpg'" class="avatar img-responsive" /> <span
-													class="header-username">Chuck Norris</span> <br />
+													class="header-username"><span th:text="${content.authorName}"></span></span> <br />
 												<br />
 												<p th:text="${content.text}"></p>
 											</div>

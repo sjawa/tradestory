@@ -69,8 +69,8 @@ public class SearchApplication implements CommandLineRunner {
 				String title = row[0].getContents();
 				String text = row[1].getContents();
 				String author = row[2].getContents();
-				System.out.println("saving content");
-				this.repository.save(new Content(title, text, author));
+				String authorName = row[3].getContents();
+				this.repository.save(new Content(title, text, author, authorName));
 			}
 			
 		} catch (IOException e) {
