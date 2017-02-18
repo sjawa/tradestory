@@ -30,11 +30,11 @@ public class SearchController {
 	}
 
 
-    /*@GetMapping("/search")
+    @GetMapping("/search")
     public String searchForm(Model model){
     	model.addAttribute("searchForm", new SearchForm());
-    	return "index";
-	}*/
+    	return "search";
+	}
 
 
     @PostMapping("/search")

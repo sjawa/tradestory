@@ -1,12 +1,13 @@
 .circle {
-  margin: 340px;
+  margin-left: 290px;
+  margin-top: 50px;
   display: inline-block;
   padding: 16px;
   text-align: center;
   width: 230px;
   height: 230px;
   border-radius: 50%;
-  border: 2px solid #1d2087;
+  border: 2px #597FB6;
 }
 
 .circle::before,
@@ -30,7 +31,7 @@
   position: relative;
   z-index: 2;
   background-color: #fff;
-  border: 2px solid #5c5eae;
+  border: 2px #5c5eae;
   color: #5c5eae;
   line-height: 50px;
   overflow: hidden;
@@ -49,14 +50,14 @@
   transform: scale(.5);
 }
 .circle:hover::after {
-  background: #5c5eae;
+  background: #597FB6;
   border-radius: 50%;
   -webkit-transform: scale(.9);
   transform: scale(.9);
 }
 
 .circle1 {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .circle2 {
