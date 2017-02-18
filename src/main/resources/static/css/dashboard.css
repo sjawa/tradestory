@@ -109,6 +109,11 @@ body {
   border-color: #597FB6;
 }
 
+.btn-info2 {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
 @font-face {
   font-family: "typewriter";
   src: url(http://localhost:8080/ufonts.com_american-typewriter.ttf);
