@@ -10,11 +10,10 @@
 <title>Tradestory</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body>
 	<div th:include="fragments/nav :: navigation"></div>
 	<div style="padding: 50px">
 		<form action="#" th:action="@{/search}" th:object="${searchForm}"
-			method="POST">
+			method="POST" id="search-form">
 			<!--form action="/search" method="POST"-->
 			<div class="container">
 				<div class="row">
@@ -23,7 +22,7 @@
 							<div class="input-group stylish-input-group">
 								<input type="text" th:field="*{query}" class="form-control"
 									placeholder="Search" /> <span class="input-group-addon">
-									<button type="submit">
+									<button type="submit" id="bth-search">
 										<span class="glyphicon glyphicon-search"></span>
 									</button>
 								</span>
@@ -36,10 +35,19 @@
 	</div>
 
 	<div class="container">
-		<div class="row">
+		<div id="results"></div>
+		<!--ul class="row">
 			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
-				<ul class="event-list">
-					<li th:each="content : ${results}">
+				<div class="space"></div>
+			</div>
+		</ul-->
+	</div>
+
+</body>
+</html>
+
+
+<!--li th:each="content : ${results}">
             <time>
               <img src="boy-512.png" class="avatar img-responsive"/>
             </time>
@@ -51,54 +59,35 @@
                   <a class="btn btn-primary" href="#primary" data-toggle="modal"><h6>
                     <i class="glyphicon glyphicon-search"></i> Leseprobe
                   </h6></a>
-                </div>
-								<!-- Modal -->
-								<div class="modal fade" id="primary" tabindex="-1" role="dialog"
-									aria-labelledby="myModalLabel" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header modal-header-primary">
-                        <button type="button" class="close" data-dismiss="modal"
-													aria-hidden="true">×</button>
-                          <h3>
-                            <span th:text="${content.teaser}"></span>
-                          </h3>
-											</div>
-											<div class="modal-body" align="left">
-                        <img src="boy-512.png" class="avatar img-responsive"/>
-                        <span class="header-username">Chuck Norris</span>
-                        <br /><br />
-                        <p th:text="${content.text}"></p>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default pull-left"
-													data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-info">Autor kontaktieren</button>
-											</div>
-										</div>
-										<!-- /.modal-content -->
-									</div>
-									<!-- /.modal-dialog -->
-								</div>
-								<!-- /.modal -->
-								<!-- Modal -->
+                </div-->
+<!-- Modal
+<div class="modal fade" id="primary" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-primary">
+        <button type="button" class="close" data-dismiss="modal"
+          aria-hidden="true">×</button>
+          <h3>
+            <span th:text="${content.teaser}"></span>
+          </h3>
+      </div>
+      <div class="modal-body" align="left">
+        <img src="boy-512.png" class="avatar img-responsive"/>
+        <span class="header-username">Chuck Norris</span>
+        <br /><br />
+        <p th:text="${content.text}"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left"
+          data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info">Autor kontaktieren</button>
+      </div>
+    </div>
 
-							</div>
+  </div>
 
-							<div class="space"></div>
-						</div>
-
-
-
-
-
-
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-
-
-</body>
-</html>
+</div>
+-->
+<!-- /.modal -->
+<!-- Modal -->

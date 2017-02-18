@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import de.app.tradestory.elasticsearch.Content;
 import de.app.tradestory.elasticsearch.ContentRepository;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/")
@@ -46,4 +48,33 @@ public class SearchController {
 		
 		return new ModelAndView("index", model);
     }
+
+	@PostMapping("/api/search")
+	public ResponseEntity<?> getSearchResultViaAjax(
+			@Valid @RequestBody SearchForm searchForm, Errors errors) {
+
+		AjaxResponseBody result = new AjaxResponseBody();
+
+		//If error, just return a 400 bad request, along with the error message
+		if (errors.hasErrors()) {
+
+			result.setMsg(errors.getAllErrors()
+					.stream().map(x -> x.getDefaultMessage())
+					.collect(Collectors.joining(",")));
+
+			return ResponseEntity.badRequest().body(result);
+
+		}
+
+		List<Content> contents = repository.find(searchForm.getQuery());
+		if (contents.isEmpty()) {
+			result.setMsg("no content found!");
+		} else {
+			result.setMsg("success");
+		}
+		result.setResult(contents);
+
+		return ResponseEntity.ok(result);
+
+	}
 }
