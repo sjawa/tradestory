@@ -31,9 +31,18 @@ public class SearchController {
 
 
     @GetMapping("/search")
-    public String searchForm(Model model){
-    	model.addAttribute("searchForm", new SearchForm());
-    	return "search";
+    public ModelAndView searchForm(){
+		Map model = new HashMap<String, Object>();
+    	model.put("searchForm", new SearchForm());
+
+		List<Content> results = new ArrayList<Content>();
+		for (Content content : repository.findAll()) {
+			results.add(content);
+		}
+
+		model.put("results", results);
+
+		return new ModelAndView("search", model);
 	}
 
 
@@ -43,8 +52,16 @@ public class SearchController {
 		Map model = new HashMap<String, Object>();
     	
     	List<Content> results = new ArrayList<Content>();
-		for (Content content : repository.find(form.getQuery())) {
-			//content.setText(content.getText().replaceAll("(\r\n|\n)", "<br /><br />"));
+		List<Content> contents;
+
+		if(form.getQuery().isEmpty()){
+			contents = repository.findAll();
+		}
+		else{
+			contents = repository.find(form.getQuery());
+		}
+
+		for (Content content : contents) {
 			results.add(content);
 		}
 		

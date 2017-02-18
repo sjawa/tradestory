@@ -6,6 +6,9 @@ public class SearchForm {
     private String query;
 
     public String getQuery() {
+        if(query == null){
+            return "";
+        }
         return query;
     }
 
