@@ -22,7 +22,7 @@
 						<div id="imaginary_container">
 							<div class="input-group stylish-input-group">
 								<input type="text" th:field="*{query}" class="form-control"
-									placeholder="Search" /> <span class="input-group-addon">
+									placeholder="Search" style="height: 40px"/> <span class="input-group-addon">
 									<button type="submit">
 										<span class="glyphicon glyphicon-search"></span>
 									</button>
@@ -39,41 +39,45 @@
 		<div class="row">
 			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
 				<ul class="event-list">
-					<li th:each="content : ${results}">
-            <time>
-              <img src="boy-512.png" class="avatar img-responsive"/>
-            </time>
-            <div class="info" style="padding: 10px">
+					<li th:each="content : ${results}"><time>
+							<img src="boy-512.png" class="avatar img-responsive" />
+						</time>
+						<div class="info" style="padding: 10px">
 							<h2 class="title" th:text="${content.teaser}"></h2>
 							<div>
-                <p style="display: inline; float: left; width: 80%" class="desc" th:text="${content.shortText}"></p>
-                <div align="right" style="display: inline; float: right; padding: 10px">
-                  <a class="btn btn-primary" href="#primary" data-toggle="modal"><h6>
-                    <i class="glyphicon glyphicon-search"></i> Leseprobe
-                  </h6></a>
-                </div>
+								<p style="display: inline; float: left; width: 80%" class="desc"
+									th:text="${content.shortText}"></p>
+								<div align="right"
+									style="display: inline; float: right; padding: 10px">
+									<a class="btn btn-primary" href="#primary" data-toggle="modal"><h6>
+											<i class="glyphicon glyphicon-search"></i> Leseprobe
+										</h6></a>
+								</div>
 								<!-- Modal -->
 								<div class="modal fade" id="primary" tabindex="-1" role="dialog"
 									aria-labelledby="myModalLabel" aria-hidden="true">
 									<div class="modal-dialog">
 										<div class="modal-content">
 											<div class="modal-header modal-header-primary">
-                        <button type="button" class="close" data-dismiss="modal"
+												<button type="button" class="close" data-dismiss="modal"
 													aria-hidden="true">×</button>
-                          <h3>
-                            <span th:text="${content.teaser}"></span>
-                          </h3>
+												<h3>
+													<span th:text="${content.teaser}"></span>
+												</h3>
 											</div>
 											<div class="modal-body" align="left">
-                        <img src="boy-512.png" class="avatar img-responsive"/>
-                        <span class="header-username">Chuck Norris</span>
-                        <br /><br />
-                        <p th:text="${content.text}"></p>
+												<img src="boy-512.png" class="avatar img-responsive" /> <span
+													class="header-username">Chuck Norris</span> <br />
+												<br />
+												<p th:text="${content.text}"></p>
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-default pull-left"
 													data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-info">Autor kontaktieren</button>
+												<button type="button" class="btn btn-info">Artikel
+													kaufen</button>	
+												<button type="button" class="btn btn-info">Autor
+													kontaktieren</button>
 											</div>
 										</div>
 										<!-- /.modal-content -->
@@ -86,14 +90,7 @@
 							</div>
 
 							<div class="space"></div>
-						</div>
-
-
-
-
-
-
-					</li>
+						</div></li>
 				</ul>
 			</div>
 		</div>
