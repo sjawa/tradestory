@@ -1,10 +1,10 @@
 .circle {
-  margin: 36px;
+  margin: 340px;
   display: inline-block;
   padding: 16px;
   text-align: center;
-  width: 180px;
-  height: 180px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
   border: 2px solid #1d2087;
 }
