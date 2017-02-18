@@ -29,13 +29,16 @@ public class Content {
 	private String text;
 
 	private String teaser;
+	
+	private String author;
 
 	public Content() {
 	}
 
-	public Content(String teaser, String text) {
+	public Content(String teaser, String text, String author) {
 		this.text = text;
 		this.teaser = teaser;
+		this.author = author;
 	}
 
 	public String getShortText(){
@@ -64,6 +67,14 @@ public class Content {
 
 	public void setTeaser(String lastName) {
 		this.teaser = lastName;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	public String getAuthor() {
+		return author;
 	}
 
 	@Override
