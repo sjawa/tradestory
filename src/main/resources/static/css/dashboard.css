@@ -103,3 +103,14 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.btn-info {
+  background-color: #597FB6;
+  border-color: #597FB6;
+}
+
+@font-face {
+  font-family: "typewriter";
+  src: url(http://localhost:8080/ufonts.com_american-typewriter.ttf);
+  format("truetype");
+}

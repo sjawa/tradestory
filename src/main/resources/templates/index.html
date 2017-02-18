@@ -7,87 +7,36 @@
 <div th:include="fragments/css :: custom"></div>
 
 <head>
-<title>Tradestory</title>
+<title>Quory</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-	<div th:include="fragments/nav :: navigation"></div>
-	<div style="padding: 50px">
-		<form action="#" th:action="@{/search}" th:object="${searchForm}"
-			method="POST" id="search-form">
-			<!--form action="/search" method="POST"-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6 col-sm-offset-3">
-						<div id="imaginary_container">
-							<div class="input-group stylish-input-group">
-								<input type="text" th:field="*{query}" class="form-control"
-									placeholder="Search" /> <span class="input-group-addon">
-									<button type="submit" id="bth-search">
-										<span class="glyphicon glyphicon-search"></span>
-									</button>
-								</span>
-							</div>
+<body>
+
+		<div class="container">
+			<div class="row">
+				<img src="quary_logo2.png" alt="Quory" style="margin-left: 365px"></img>
+				<section class="section_0">
+					<div class="col-sm-3">
+						<div class="circle circle1">
+							<a href="#section_1">
+								<h2>
+									<p style="white-space: nowrap; padding-top: 60px; font-family: typewriter">Ich biete</p>
+								</h2>
+							</a>
 						</div>
 					</div>
-				</div>
+					<div class="col-sm-3">
+						<div class="circle circle2">
+							<a href="/search">
+								<h2>
+									<p style="white-space: nowrap; padding-top: 60px; font-family: typewriter">Ich suche</p>
+								</h2>
+							</a>
+						</div>
+					</div>
+				</section>
 			</div>
-		</form>
-	</div>
-
-	<div class="container">
-		<div id="results"></div>
-		<!--ul class="row">
-			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
-				<div class="space"></div>
-			</div>
-		</ul-->
 	</div>
 
 </body>
 </html>
-
-
-<!--li th:each="content : ${results}">
-            <time>
-              <img src="boy-512.png" class="avatar img-responsive"/>
-            </time>
-            <div class="info" style="padding: 10px">
-							<h2 class="title" th:text="${content.teaser}"></h2>
-							<div>
-                <p style="display: inline; float: left; width: 80%" class="desc" th:text="${content.shortText}"></p>
-                <div align="right" style="display: inline; float: right; padding: 10px">
-                  <a class="btn btn-primary" href="#primary" data-toggle="modal"><h6>
-                    <i class="glyphicon glyphicon-search"></i> Leseprobe
-                  </h6></a>
-                </div-->
-<!-- Modal
-<div class="modal fade" id="primary" tabindex="-1" role="dialog"
-  aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header modal-header-primary">
-        <button type="button" class="close" data-dismiss="modal"
-          aria-hidden="true">×</button>
-          <h3>
-            <span th:text="${content.teaser}"></span>
-          </h3>
-      </div>
-      <div class="modal-body" align="left">
-        <img src="boy-512.png" class="avatar img-responsive"/>
-        <span class="header-username">Chuck Norris</span>
-        <br /><br />
-        <p th:text="${content.text}"></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left"
-          data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-info">Autor kontaktieren</button>
-      </div>
-    </div>
-
-  </div>
-
-</div>
--->
-<!-- /.modal -->
-<!-- Modal -->
